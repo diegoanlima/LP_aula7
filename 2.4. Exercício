@@ -1,0 +1,57 @@
+#include <stdio.h>
+
+int main() {
+    float preco_batata = 10.00, preco_hamburguer = 15.00, preco_suco = 9.00, preco_combo = 30.00;
+    
+    int batatas = 0, hamburgueres = 0, sucos = 0, combos = 0;
+    
+    char produto;
+    int total_itens = 0;
+    float valor_total = 0.0;
+
+    while (1) {
+        printf("Digite a letra do produto vendido (b - Batata, h - Hamburguer, s - Suco, c - Combo) ou 'f' para finalizar: ");
+        scanf(" %c", &produto);  
+        
+        if (produto == 'f') {
+            break;
+        }
+        
+       
+        switch (produto) {
+            case 'b':
+                batatas++;
+                total_itens++;
+                valor_total += preco_batata;
+                break;
+            case 'h':
+                hamburgueres++;
+                total_itens++;
+                valor_total += preco_hamburguer;
+                break;
+            case 's':
+                sucos++;
+                total_itens++;
+                valor_total += preco_suco;
+                break;
+            case 'c':
+                combos++;
+                total_itens++;
+                valor_total += preco_combo;
+                break;
+            default:
+                printf("Entrada inválida! .\n");
+        }
+    }
+
+    printf("\nRelatório de vendas:\n");
+    printf("Suco:       %d vendidos\n", sucos);
+    printf("Batata:     %d vendidas\n", batatas);
+    printf("Hamburguer: %d vendidos\n", hamburgueres);
+    printf("Combos:     %d vendidos\n", combos);
+    printf("-----------------------\n");
+    printf("Total:      %d itens\n", total_itens);
+    printf("Valor total: R$ %.2f\n", valor_total);
+
+    return 0;
+}
